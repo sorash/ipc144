@@ -1,0 +1,293 @@
+
+<!-- saved from url=(0057)https://scs.senecac.on.ca/~ipc144/pages/workshops/w6.html -->
+<html lang="en-us" xmlns="http://www.w3.org/1999/xhtml" hc="delumine-smart "><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>ie<!--?xml version='1.0' encoding='UTF-8'?-->
+
+
+
+   <title>The C Programming Language | ICT - Seneca</title>
+
+   
+   <meta http-equiv="PICS-Label" content="(PICS-1.1 &quot;http://www.icra.org/ratingsv02.html&quot; l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true r (n 0 s 0 v 0 l 0) &quot;http://www.classify.org/safesurf/&quot; l gen true r (SS~~000 1))">
+
+   <meta name="Copyright" content="(c) Copyright Chris Szalwinski and Seneca College 2013">
+   <meta name="Description" content="Welcome to Software Development.  On this site you can find the introductory programming course.  Designed by Chris Szalwinski.">
+   <meta name="Abstract" content="This subject reviews the principles of procedural programming.  Students study the solution of problems using structured programming techniques with the C programming language.  The emphasis throughout is on the solution of small problems.">
+   <meta name="Author" content="chris.szalwinski@senecacollege.ca">
+   <meta name="Keywords" content="sofware development, procedural programming, lecture notes">
+
+   <link rel="stylesheet" type="text/css" href="./workshop6_files/style.043.css">
+   <link rel="stylesheet" type="text/css" href="./workshop6_files/styleScreen.043.css" media="screen">
+   <link rel="stylesheet" type="text/css" href="./workshop6_files/styleSPrint.043.css" media="print">
+   <link rel="stylesheet" type="text/css" href="./workshop6_files/styleNav.043.css">
+
+
+
+
+<table id="top" width="850" cellspacing="0" cellpadding="0">
+
+   <!-- Banner -->
+   <tbody><tr height="120">
+      <td colspan="2" class="banner">
+      <table cellspacing="0" cellpadding="0">
+         <tbody><tr>
+            <td width="250" class="banner">
+               <center><span class="text0">&nbsp;&nbsp;Software&nbsp;&nbsp;<br>
+               &nbsp;&nbsp;Development&nbsp;&nbsp;</span></center>
+            </td>
+            <td class="tbanner">
+               <img src="./workshop6_files/Banner4.gif" height="120" width="500" alt="Software Development">
+            </td>
+         </tr>
+      </tbody></table>
+      </td>
+   </tr>
+
+   <!-- Navigation Bar -->
+   <tr height="20">
+      <td class="panel1" align="left" valign="bottom">
+         <ul id="tabnav">
+         <li><a href="https://scs.senecac.on.ca/">ICT</a></li>
+         <!--<li><a href="http://cs.senecac.on.ca/~bsd">BSD</a></li>-->
+         <li><a href="https://scs.senecac.on.ca/~ipc144/index.html">Home</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/outline.js"></script><a href="https://secure.senecac.on.ca/ssos/findWithoutSemester/ipc144/SICT">Outline</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/timeline.html">Timeline</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/content/index.html">Notes</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/classroom_a.js"></script></li>
+         <li><script type="text/javascript" src="./workshop6_files/classroom_b.js"></script></li>
+         <li><script type="text/javascript" src="./workshop6_files/workshops.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/index.html">Workshops</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/assignments.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/assignments/index.html">Assignments</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/instructors.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/instructors/index.html">Instructors</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/workshops/w6_p.html"><img align="center" src="./workshop6_files/Printer.gif" height="15" width="10" alt="Printer Friendly Version of this Page"></a></li>
+         </ul>
+      </td>
+      <!-- Web Site Title -->
+      <td class="panel2" width="150" align="center">
+         <span class="text1"><script type="text/javascript" src="./workshop6_files/subject.js"></script>IPC144</span>
+      </td>
+   </tr>
+
+   <!-- Body Cells -->
+   <tr height="600">
+
+      <!-- Content Area -->
+      <td class="tbody" bgcolor="ffffff" valign="top">
+         <table cellpadding="10" width="100%">
+            <tbody><tr>
+               <td bgcolor="ffffff" valign="top">
+               <br>
+               <center><span class="texth">Part C - Modules</span>
+               <br>
+               <br>
+               <span class="texthead">
+               Library Functions</span>
+               <br>
+               <br><span class="textagend">
+               Workshop 6</span>
+               </center>
+               <br>
+               <br>
+
+               <p>
+               In this workshop, you are to write a simple game that accepts user input
+               and uses random values.&nbsp;</p>
+               <br>
+
+               <p class="section">Learning Outcome</p>
+               <p>
+               Upon successful completion of this workshop, you
+               will have demonstrated the abilities to
+               </p><ul>
+               <li>validate user input</li>
+               <li>use standard library functions</li>
+               </ul>
+               <p></p>
+               <br>
+
+               <p class="section">Dice Throws</p>
+               <p>
+               Write a program that 'throws' a pair of dice
+               until the sum of the values on their top faces equals a
+               specified number.&nbsp; The values on the six faces of each
+               die range from one to six inclusive.&nbsp; Your program prompts for
+               and accepts the number sought, validates the input, requests new
+               new input if current input is invalid and uses
+               the <span class="code">rand()</span> and <span class="code">srand()</span>
+               library functions.&nbsp;
+               </p>
+               <p>
+               Code your validation function so that you can use it
+               without modification in another application.&nbsp;
+               </p>
+               <p>
+               The output from your program looks like:&nbsp;
+               </p>
+               <table width="45%">
+               <tbody><tr>
+               <td>
+               <pre class="result"> Game of Dice
+ ============
+ Enter total sought : 13
+ ** Invalid Input! Try Again! **
+ Enter total sought : 11
+ Result of throw  1 : 1 + 3
+ Result of throw  2 : 4 + 4
+ Result of throw  3 : 6 + 2
+ Result of throw  4 : 5 + 6
+ You got your total in 4 throws!</pre></td></tr></tbody></table>
+               <br>
+
+               <p class="section">Card Draw (Difficult)</p>
+               <p>
+               Write a program that 'draws' cards from a deck of 52 cards
+               until it has drawn the card the user is seeking.&nbsp; Your
+               program prompts for and accepts the suit and the rank of the
+               card sought, request new input if the current input is invalid
+               and uses the <span class="code">rand()</span> and <span class="code">srand()</span>
+               library functions.&nbsp; You may assume that the user returns
+               the drawn card to the deck.&nbsp; (If you wish to make your
+               coding slightly more realistic and hence more complicated,
+               you may assume that the user does not return the drawn card
+               to the deck.)
+               </p>
+               <p>
+               Design your validation functions so that you can use them
+               without modification in another application.&nbsp;
+               </p>
+               <p>
+               The output from your program looks like:&nbsp;
+               </p>
+               <table width="45%">
+               <tbody><tr>
+               <td>
+               <pre class="result"> Card Draw
+ =========
+ Enter Suit : Q
+ ** Invalid Input! Try Again. **
+ Enter Suit : H
+ Enter Rank : 4
+ Result of draw  1 : 2C
+ Result of draw  2 : 3S
+ Result of draw  3 : KD
+ Result of draw  4 : 4H
+ You drew your card in 4 draws!</pre></td></tr></tbody></table>
+               <br>
+
+               <p class="section">SUBMISSION</p>
+               <p>
+               Upload your solution according to your instructor's guidelines.&nbsp;
+               </p>
+               <br>
+               <br>
+               <br>
+               </td>
+            </tr>
+         </tbody></table>
+      </td>
+
+      <!-- Detail Menu -->
+      <td class="panel1" width="150" valign="top" rowspan="2">
+         <ul id="mennav">
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/welco.html">Welcome</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/content/index.html">Notes</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/workshops.a.js"></script><a class="active" href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/index.html">Workshops</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/workshop_1.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w1.html">Getting&nbsp;Started</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/workshop_2.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w2.html">Computations</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/workshop_3.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w3.html">Logic</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/workshop_4.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w4.html">Functions</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/workshop_5.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w5.html">Functions&nbsp;with&nbsp;Pointers</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/workshop_6.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w6.html">Library&nbsp;Functions</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/workshop_7.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w7.html">Arrays</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/workshop_8.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w8.html">Structures</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/workshop_9.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w9.html">Strings</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/workshop_10.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w10.html">Files</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/assignments.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/assignments/index.html">Assignments</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/handouts/index.html">Handouts</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/practice/index.html">Practice</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/resources/index.html">Resources</a></li>
+         <!--<li><a href="../content/glossary.html">Glossary</a></li>-->
+         </ul>
+      </td>
+   </tr>
+
+   <!-- Content Area Footer -->
+   <tr height="20">
+      <td class="panel3" align="center">
+         <table class="panel2" width="95%">
+            <tbody><tr>
+               <td align="left">
+                  &nbsp;&nbsp;<a href="https://scs.senecac.on.ca/~ipc144/pages/workshops/w6_p.html" class="text3">
+                  <img src="./workshop6_files/Printer.gif" height="15" width="10" alt="Printer Friendly Version of this Page">&nbsp;print this page</a>&nbsp;&nbsp;
+               </td>
+               <td align="right">
+                  &nbsp;&nbsp;<a href="https://scs.senecac.on.ca/~ipc144/pages/workshops/w6.html#top" class="text3">Top&nbsp;
+                  <img src="./workshop6_files/ArrowToT.gif" height="15" width="15" alt="Go Back to the Top of this Page"></a>
+               </td>
+            </tr>
+         </tbody></table>
+      </td>
+   </tr>
+
+   <!-- Footer -->
+   <tr>
+      <!-- Left Panel -->
+      <td class="panel1" width="700" align="center">
+         <!-- Lateral Motion Control -->
+         <!--<table width="90%" align="center">
+            <tr>
+               <td width="50%" align="left">
+                  <a href="datat.html" class="text3">
+                  <img src="../images/ArrowToL.gif" height="15" width="15" class="panel1" alt="Previous Reading" />&nbsp;&nbsp;Previous: Primitive Data Types</a>
+               </td>
+               <td width="50%" align="right">
+                  <a href="modul.html" class="text3">Next: Modular Programs&nbsp;&nbsp;
+                  <img src="../images/ArrowToR.gif" height="15" width="15" class="panel1" alt="Next Reading" /></a>
+               </td>
+            </tr>
+         </table>-->
+         <br>
+         <br>
+         <!-- Alternate Navigation Links -->
+         <ul id="altnav" align="center">
+         <li><a href="https://scs.senecac.on.ca/">ICT</a></li>
+         <!--<li><a href="http://cs.senecac.on.ca/~bsd">BSD Home</a></li>-->
+         <li><a href="https://scs.senecac.on.ca/~ipc144/index.html">BRP270 Home</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/outline.js"></script><a href="https://secure.senecac.on.ca/ssos/findWithoutSemester/ipc144/SICT">Outline</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/timeline.html">Timeline&nbsp;</a></li>
+         </ul>
+         <ul id="altnav" align="center">
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/content/index.html">Notes</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/classroom_a.js"></script></li>
+         <li><script type="text/javascript" src="./workshop6_files/classroom_b.js"></script></li>
+         <li><script type="text/javascript" src="./workshop6_files/workshops.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/index.html">Workshops</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/assignments.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/assignments/index.html">Assignments</a></li>
+         <li><script type="text/javascript" src="./workshop6_files/instructors.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/instructors/index.html">Instructors</a></li>
+         </ul>
+         <br>
+         <!-- Bottom Line -->
+         <table cellpadding="1" width="90%">
+            <tbody><tr>
+               <td width="33%" class="text3">
+                  &nbsp;&nbsp;Designed by Chris Szalwinski&nbsp;&nbsp;
+               </td>
+               <td width="34%" align="center">
+                  <a href="https://scs.senecac.on.ca/~ipc144/pages/copyright.html" class="text3">Copying From This Site</a>
+               </td>
+               <td width="33%" align="right" class="text3">
+                  <script language="javascript">
+                  var lm = document.lastModified.slice(0,-3);
+                  document.write("Last Modified: " +lm)
+                  </script>Last Modified: 09/09/2015 12:39&nbsp;&nbsp;
+               </td>
+            </tr>
+         </tbody></table>
+      </td>
+
+      <!-- Logo - Right Bottom Corner -->
+      <td class="panel2" width="150" align="center">
+         <img src="./workshop6_files/Logo.gif" height="73" width="85"><br><a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/"><img alt="Creative Commons License" style="border-width:0" src="./workshop6_files/88x31.png"></a>
+      </td>
+   </tr>
+</tbody></table>
+
+
+</body><div id="deluminate_fullscreen_workaround" style="height: 1591px; width: 1903px; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(155, 153, 153);"></div></html>

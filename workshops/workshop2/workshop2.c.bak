@@ -1,0 +1,31 @@
+/* workshop2 */
+
+// import needed headers
+#include <stdio.h>
+
+int main(void){
+	
+	// variables for item count
+	int count;
+
+	// variables fo price, subtotal and total, and tax amount
+	double price, subtotal, total, tax;
+
+	// ask user for number of items purchased
+	printf("Please enter how many items were purchased: ");
+	scanf("%i", &count);
+	
+	// ask user for price of items
+	printf("Please enter the base price: ");
+	scanf("%lf", &price);
+	
+	// calculate the total with tax
+	subtotal = price * count;
+	tax = subtotal * 0.13;
+	total = subtotal + tax;
+	
+	// show user the tax, with the price before and after
+	printf("Subtotal:\t%f\n", subtotal);
+	printf("HST(13%):\t%f\n", tax);
+	printf("Total after tax:\t%f\n", total);
+}

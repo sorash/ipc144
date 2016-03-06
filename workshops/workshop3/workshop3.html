@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0057)https://scs.senecac.on.ca/~ipc144/pages/workshops/w3.html -->
+<html lang="en-us" xmlns="http://www.w3.org/1999/xhtml" hc="delumine-smart "><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   <title>The C Programming Language | ICT - Seneca</title>
+
+   
+   <meta http-equiv="PICS-Label" content="(PICS-1.1 &quot;http://www.icra.org/ratingsv02.html&quot; l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true r (n 0 s 0 v 0 l 0) &quot;http://www.classify.org/safesurf/&quot; l gen true r (SS~~000 1))">
+
+   <meta name="Copyright" content="(c) Copyright Chris Szalwinski and Seneca College 2013">
+   <meta name="Description" content="Welcome to Software Development.  On this site you can find the introductory programming course.  Designed by Chris Szalwinski.">
+   <meta name="Abstract" content="This subject reviews the principles of procedural programming.  Students study the solution of problems using structured programming techniques with the C programming language.  The emphasis throughout is on the solution of small problems.">
+   <meta name="Author" content="chris.szalwinski@senecacollege.ca">
+   <meta name="Keywords" content="sofware development, procedural programming, lecture notes">
+
+   <link rel="stylesheet" type="text/css" href="./workshop3_files/style.043.css">
+   <link rel="stylesheet" type="text/css" href="./workshop3_files/styleScreen.043.css" media="screen">
+   <link rel="stylesheet" type="text/css" href="./workshop3_files/styleSPrint.043.css" media="print">
+   <link rel="stylesheet" type="text/css" href="./workshop3_files/styleNav.043.css">
+</head>
+
+<body>
+
+<table id="top" width="850" cellspacing="0" cellpadding="0">
+
+   <!-- Banner -->
+   <tbody><tr height="120">
+      <td colspan="2" class="banner">
+      <table cellspacing="0" cellpadding="0">
+         <tbody><tr>
+            <td width="250" class="banner">
+               <center><span class="text0">&nbsp;&nbsp;Software&nbsp;&nbsp;<br>
+               &nbsp;&nbsp;Development&nbsp;&nbsp;</span></center>
+            </td>
+            <td class="tbanner">
+               <img src="./workshop3_files/Banner4.gif" height="120" width="500" alt="Software Development">
+            </td>
+         </tr>
+      </tbody></table>
+      </td>
+   </tr>
+
+   <!-- Navigation Bar -->
+   <tr height="20">
+      <td class="panel1" align="left" valign="bottom">
+         <ul id="tabnav">
+         <li><a href="https://scs.senecac.on.ca/">ICT</a></li>
+         <!--<li><a href="http://cs.senecac.on.ca/~bsd">BSD</a></li>-->
+         <li><a href="https://scs.senecac.on.ca/~ipc144/index.html">Home</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/outline.js"></script><a href="https://secure.senecac.on.ca/ssos/findWithoutSemester/ipc144/SICT">Outline</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/timeline.html">Timeline</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/content/index.html">Notes</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/classroom_a.js"></script></li>
+         <li><script type="text/javascript" src="./workshop3_files/classroom_b.js"></script></li>
+         <li><script type="text/javascript" src="./workshop3_files/workshops.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/index.html">Workshops</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/assignments.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/assignments/index.html">Assignments</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/instructors.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/instructors/index.html">Instructors</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/workshops/w3_p.html"><img align="center" src="./workshop3_files/Printer.gif" height="15" width="10" alt="Printer Friendly Version of this Page"></a></li>
+         </ul>
+      </td>
+      <!-- Web Site Title -->
+      <td class="panel2" width="150" align="center">
+         <span class="text1"><script type="text/javascript" src="./workshop3_files/subject.js"></script>IPC144</span>
+      </td>
+   </tr>
+
+   <!-- Body Cells -->
+   <tr height="600">
+
+      <!-- Content Area -->
+      <td class="tbody" bgcolor="ffffff" valign="top">
+         <table cellpadding="10" width="95%">
+            <tbody><tr>
+               <td bgcolor="ffffff" valign="top">
+               <br>
+               <center><span class="texth">Part B - Computations</span>
+               <br>
+               <br>
+               <span class="texthead">
+               Logic</span>
+               <br>
+               <br><span class="textagend">
+               Workshop 3</span>
+               </center>
+               <br>
+               <br>
+
+               <p>
+               In this workshop, you are to experiment with check digits.&nbsp;
+               Check digits are used in many forms of identification, including
+               social insurance numbers, book numbering systems, and barcode
+               interpreters.&nbsp; Select one of the problems and submit your
+               programming solution to that problem as your workshop solution.</p>
+               <br>
+
+               <p class="section">Learning Outcome</p>
+               <p>
+               Upon successful completion of this workshop, you
+               will have demonstrated the ability to
+               </p><ul>
+               <li>work with the modulus operator</li>
+               <li>design an algorithm to check the validity of a
+               self-validating number</li>
+               <li>write code that includes an iteration</li>
+               </ul>
+               <p></p>
+               <br>
+
+               <p id="sin" class="section">SIN Validator</p>
+               <p class="ssection">Background</p>
+               <p>
+               A Canadian Social Insurance Number (SIN) has nine digits.&nbsp; The right-most digit is
+               a check digit that validate the other digits.&nbsp;
+               For an integer to be a valid SIN, it must contain nine digits and the weighted sum of
+               the digits including the check digit must be divisible by 10.&nbsp;</p>
+               <p>
+               To obtain the weighted sum, take the digit to the left of the
+               check digit and then every second digit leftwards.&nbsp;
+               Add each of these digits to itself.&nbsp; Then, add each digit
+               of each sum to form the weighted sum of the even positioned
+               digits.&nbsp; Add each of the remaining SIN digits
+               (except the check digit) to form the sum of the odd positioned
+               digits.&nbsp; Add the two sums and subtract the next highest
+               number ending in zero from their total.&nbsp; If this number
+               is the check digit, the whole number is a valid SIN;
+               otherwise, the whole number is not a valid SIN.
+               </p>
+               <p>
+               Consider the following example:
+               </p>
+               <table width="45%">
+               <tbody><tr>
+               <td>
+               <pre> SIN  193 456 787
+                |
+ check digit is 7
+ add first set of alternates to themselves&nbsp;
+   9  4  6  8
+  <u> 9  4  6  8</u>
+  18  8 12 16
+ add the digits of each sum 1+8+8+1+2+1+6 = 27
+ add the other alternates   1+3+5+7       = <u>16</u>
+ total                                    = 43
+ Next highest integer multiple of 10      = <u>50</u>
+ Difference                               =  7
+ Matches the check digit, therefore this number is a valid SIN&nbsp;</pre></td></tr></tbody></table>
+               <p class="ssection">Specifications</p>
+               <p>
+               Design a program that validates a Canadian
+               Social Insurance Number (SIN).&nbsp;
+               Your program keeps accepting a whole number and determining
+               if that whole number is a valid SIN.&nbsp; Your program terminates
+               when the user enters 0 as the whole number.&nbsp; The output from
+               your program looks something like:
+               </p>
+               <table width="45%">
+               <tbody><tr>
+               <td>
+               <pre class="result"> SIN Validator
+ =============
+ SIN (0 to quit): 193456787
+ This is a valid SIN.
+ SIN (0 to quit): 193456788
+ This is not a valid SIN.
+ SIN (0 to quit): 0
+ Have a Nice Day!</pre></td></tr></tbody></table>
+               <br>
+
+               <p id="upc" class="section">Barcode Interpreter (Difficult)</p>
+               <p>
+               This problem requires a data type that stores 12 digits and
+               involves a further decomposition.&nbsp; Select the appropriate
+               data type.&nbsp;
+               </p>
+               <p class="ssection">Background</p>
+               <p>
+               A Universal Product Code (UPC) bar code consists of 12-digits.&nbsp; The first 6 digits represent
+               the company that produces the product, the next 5 digits represent a
+               unique item number that that company has assigned to the product and the
+               last digit is a check digit.&nbsp; The check digit is used to
+               determine if the code has been properly interpreted by the scanning
+               device.&nbsp;
+               </p>
+               <p>
+               To determine the expected value of the check digit, use the weighted sum of
+               the other digits:
+               </p>
+               <ol>
+               <li>multiply the sum of the 1st, 3rd, etc. digits in the code by 3</li>
+               <li>add the sum of the 2nd, 4th, etc digits (excluding the check digit)</li>
+               <li>add the two sums together to obtain the weighted total</li>
+               <li>the expected check digit is the digit that when added to the weighted total
+               results in a number that is divisible by 10</li>
+               </ol>
+               <p>
+               Consider the following example:
+               </p>
+               <table width="45%">
+               <tbody><tr>
+               <td>
+               <pre> UPC  067800001019
+                 |
+ check digit is  9
+ add 1st, 3rd, ..., 11th digits&nbsp;
+      0 7 0 0 1 1    =  9
+ multiply by 3       = 27
+ add 2nd, 4th, ..., 10th digits
+       6 8 0 0 0     = <u>14</u>
+ add weighted sum    = 41
+ add check digit        9
+ total                 50
+ divide by 10           5
+ remainder              0
+ Therefore this is a valid UPC</pre></td></tr></tbody></table>
+               <p class="ssection">Specifications</p>
+               <p>
+               Design a program that validates a UPC
+               and displays the company and product numbers.&nbsp;
+               Your program keeps accepting an integer and determining
+               if that integer is a valid UPC.&nbsp; Your program terminates
+               when the user enters 0 as the integer.&nbsp;
+               </p>
+               <p>
+               The output from your program looks something like:
+               </p>
+               <table width="45%">
+               <tbody><tr>
+               <td>
+               <pre class="result"> UPC Validator
+ =============
+ UPC (0 to quit): 067800001019&nbsp;
+ This is a valid UPC.
+ The company code is 067800.
+ The product code is  00101.
+ UPC (0 to quit): 067800001018
+ This is not a valid UPC.
+ UPC (0 to quit): 0
+ Have a Nice Day!</pre></td></tr></tbody></table>
+               <br>
+
+               <p class="section">SUBMISSION</p>
+               <p>
+               Upload your solution according to your instructor's guidelines.&nbsp;
+               </p>
+               <br>
+               <br>
+               </td>
+            </tr>
+         </tbody></table>
+      </td>
+
+      <!-- Detail Menu -->
+      <td class="panel1" width="150" valign="top" rowspan="2">
+         <ul id="mennav">
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/welco.html">Welcome</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/content/index.html">Notes</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/workshops.a.js"></script><a class="active" href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/index.html">Workshops</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/workshop_1.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w1.html">Getting&nbsp;Started</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/workshop_2.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w2.html">Computations</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/workshop_3.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w3.html">Logic</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/workshop_4.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w4.html">Functions</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/workshop_5.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w5.html">Functions&nbsp;with&nbsp;Pointers</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/workshop_6.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w6.html">Library&nbsp;Functions</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/workshop_7.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w7.html">Arrays</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/workshop_8.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w8.html">Structures</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/workshop_9.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w9.html">Strings</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/workshop_10.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w10.html">Files</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/assignments.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/assignments/index.html">Assignments</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/handouts/index.html">Handouts</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/practice/index.html">Practice</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/resources/index.html">Resources</a></li>
+         <!--<li><a href="../content/glossary.html">Glossary</a></li>-->
+         </ul>
+      </td>
+   </tr>
+
+   <!-- Content Area Footer -->
+   <tr height="20">
+      <td class="panel3" align="center">
+         <table class="panel2" width="95%">
+            <tbody><tr>
+               <td align="left">
+                  &nbsp;&nbsp;<a href="https://scs.senecac.on.ca/~ipc144/pages/workshops/w3_p.html" class="text3">
+                  <img src="./workshop3_files/Printer.gif" height="15" width="10" alt="Printer Friendly Version of this Page">&nbsp;print this page</a>&nbsp;&nbsp;
+               </td>
+               <td align="right">
+                  &nbsp;&nbsp;<a href="https://scs.senecac.on.ca/~ipc144/pages/workshops/w3.html#top" class="text3">Top&nbsp;
+                  <img src="./workshop3_files/ArrowToT.gif" height="15" width="15" alt="Go Back to the Top of this Page"></a>
+               </td>
+            </tr>
+         </tbody></table>
+      </td>
+   </tr>
+
+   <!-- Footer -->
+   <tr>
+      <!-- Left Panel -->
+      <td class="panel1" width="700" align="center">
+         <!-- Lateral Motion Control -->
+         <!--<table width="90%" align="center">
+            <tr>
+               <td width="50%" align="left">
+                  <a href="datat.html" class="text3">
+                  <img src="../images/ArrowToL.gif" height="15" width="15" class="panel1" alt="Previous Reading" />&nbsp;&nbsp;Previous: Primitive Data Types</a>
+               </td>
+               <td width="50%" align="right">
+                  <a href="modul.html" class="text3">Next: Modular Programs&nbsp;&nbsp;
+                  <img src="../images/ArrowToR.gif" height="15" width="15" class="panel1" alt="Next Reading" /></a>
+               </td>
+            </tr>
+         </table>-->
+         <br>
+         <br>
+         <!-- Alternate Navigation Links -->
+         <ul id="altnav" align="center">
+         <li><a href="https://scs.senecac.on.ca/">ICT</a></li>
+         <!--<li><a href="http://cs.senecac.on.ca/~bsd">BSD Home</a></li>-->
+         <li><a href="https://scs.senecac.on.ca/~ipc144/index.html">Home</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/outline.js"></script><a href="https://secure.senecac.on.ca/ssos/findWithoutSemester/ipc144/SICT">Outline</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/timeline.html">Timeline&nbsp;</a></li>
+         </ul>
+         <ul id="altnav" align="center">
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/content/index.html">Notes</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/classroom_a.js"></script></li>
+         <li><script type="text/javascript" src="./workshop3_files/classroom_b.js"></script></li>
+         <li><script type="text/javascript" src="./workshop3_files/workshops.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/index.html">Workshops</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/assignments.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/assignments/index.html">Assignments</a></li>
+         <li><script type="text/javascript" src="./workshop3_files/instructors.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/instructors/index.html">Instructors</a></li>
+         </ul>
+         <br>
+         <!-- Bottom Line -->
+         <table cellpadding="1" width="90%">
+            <tbody><tr>
+               <td width="33%" class="text3">
+                  &nbsp;&nbsp;Designed by Chris Szalwinski&nbsp;&nbsp;
+               </td>
+               <td width="34%" align="center">
+                  <a href="https://scs.senecac.on.ca/~ipc144/pages/copyright.html" class="text3">Copying From This Site</a>
+               </td>
+               <td width="33%" align="right" class="text3">
+                  <script language="javascript">
+                  var lm = document.lastModified.slice(0,-3);
+                  document.write("Last Modified: " +lm)
+                  </script>Last Modified: 09/09/2015 12:39&nbsp;&nbsp;
+               </td>
+            </tr>
+         </tbody></table>
+      </td>
+
+      <!-- Logo - Right Bottom Corner -->
+      <td class="panel2" width="150" align="center">
+         <img src="./workshop3_files/Logo.gif" height="73" width="85"><br><a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/"><img alt="Creative Commons License" style="border-width:0" src="./workshop3_files/88x31.png"></a>
+      </td>
+   </tr>
+</tbody></table>
+
+
+</body><div id="deluminate_fullscreen_workaround" style="height: 2591px; width: 1903px; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(155, 153, 153);"></div></html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0057)https://scs.senecac.on.ca/~ipc144/pages/workshops/w7.html -->
+<html lang="en-us" xmlns="http://www.w3.org/1999/xhtml" hc="delumine-smart "><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   <title>The C Programming Language | ICT - Seneca</title>
+
+   
+   <meta http-equiv="PICS-Label" content="(PICS-1.1 &quot;http://www.icra.org/ratingsv02.html&quot; l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true r (n 0 s 0 v 0 l 0) &quot;http://www.classify.org/safesurf/&quot; l gen true r (SS~~000 1))">
+
+   <meta name="Copyright" content="(c) Copyright Chris Szalwinski and Seneca College 2013">
+   <meta name="Description" content="Welcome to Software Development.  On this site you can find the introductory programming course.  Designed by Chris Szalwinski.">
+   <meta name="Abstract" content="This subject reviews the principles of procedural programming.  Students study the solution of problems using structured programming techniques with the C programming language.  The emphasis throughout is on the solution of small problems.">
+   <meta name="Author" content="chris.szalwinski@senecacollege.ca">
+   <meta name="Keywords" content="sofware development, procedural programming, lecture notes">
+
+   <link rel="stylesheet" type="text/css" href="./workshop7_files/style.043.css">
+   <link rel="stylesheet" type="text/css" href="./workshop7_files/styleScreen.043.css" media="screen">
+   <link rel="stylesheet" type="text/css" href="./workshop7_files/styleSPrint.043.css" media="print">
+   <link rel="stylesheet" type="text/css" href="./workshop7_files/styleNav.043.css">
+</head>
+
+<body>
+
+<table id="top" width="850" cellspacing="0" cellpadding="0">
+
+   <!-- Banner -->
+   <tbody><tr height="120">
+      <td colspan="2" class="banner">
+      <table cellspacing="0" cellpadding="0">
+         <tbody><tr>
+            <td width="250" class="banner">
+               <center><span class="text0">&nbsp;&nbsp;Software&nbsp;&nbsp;<br>
+               &nbsp;&nbsp;Development&nbsp;&nbsp;</span></center>
+            </td>
+            <td class="tbanner">
+               <img src="./workshop7_files/Banner4.gif" height="120" width="500" alt="Software Development">
+            </td>
+         </tr>
+      </tbody></table>
+      </td>
+   </tr>
+
+   <!-- Navigation Bar -->
+   <tr height="20">
+      <td class="panel1" align="left" valign="bottom">
+         <ul id="tabnav">
+         <li><a href="https://scs.senecac.on.ca/">ICT</a></li>
+         <!--<li><a href="http://cs.senecac.on.ca/~bsd">BSD</a></li>-->
+         <li><a href="https://scs.senecac.on.ca/~ipc144/index.html">Home</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/outline.js"></script><a href="https://secure.senecac.on.ca/ssos/findWithoutSemester/ipc144/SICT">Outline</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/timeline.html">Timeline</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/content/index.html">Notes</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/classroom_a.js"></script></li>
+         <li><script type="text/javascript" src="./workshop7_files/classroom_b.js"></script></li>
+         <li><script type="text/javascript" src="./workshop7_files/workshops.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/index.html">Workshops</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/assignments.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/assignments/index.html">Assignments</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/instructors.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/instructors/index.html">Instructors</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/workshops/w7_p.html"><img align="center" src="./workshop7_files/Printer.gif" height="15" width="10" alt="Printer Friendly Version of this Page"></a></li>
+         </ul>
+      </td>
+      <!-- Web Site Title -->
+      <td class="panel2" width="150" align="center">
+         <span class="text1"><script type="text/javascript" src="./workshop7_files/subject.js"></script>IPC144</span>
+      </td>
+   </tr>
+
+   <!-- Body Cells -->
+   <tr height="600">
+
+      <!-- Content Area -->
+      <td class="tbody" bgcolor="ffffff" valign="top">
+         <table cellpadding="10" width="100%">
+            <tbody><tr>
+               <td bgcolor="ffffff" valign="top">
+               <br>
+               <center><span class="texth">Part D - Data Structures</span>
+               <br>
+               <br>
+               <span class="texthead">
+               Arrays</span>
+               <br>
+               <br><span class="textagend">
+               Workshop 7</span>
+               </center>
+               <br>
+               <br>
+
+               <p>
+               In this workshop, you are to write a program that processes a list
+               of data values.</p>
+               <br>
+
+               <p class="section">Learning Outcome</p>
+               <p>
+               Upon successful completion of this workshop, you will have
+               demonstrated the abilities to
+               </p>
+               <ul>
+               <li>use one-dimensional arrays</li>
+               <li>validate user input</li>
+               <li>format program output</li>
+               </ul>
+               <br>
+
+               <p class="section">Grocery Store Inventory</p>
+               <p>
+               Design and code a program that lists the packaged goods in a
+               grocery store and calculates their total value.&nbsp; Your
+               program prompts the user for and accepts each item's
+               </p>
+               <ul>
+               <li>barcode</li>
+               <li>price</li>
+               <li>quantity in stock </li>
+               </ul>
+               <p>
+               Your program stops accepting data when the user enters 0 for the
+               barcode.
+               </p>
+               <p>
+               Your program uses arrays, includes functions to validate
+               the input and calculates the total value of the inventory.&nbsp;
+               You may assume that there are no more than
+               100 items to process, but write your code so that you can
+               change this limit by editing a single statement.
+               </p>
+               <p>
+               Preface each function header with a comprehensive description
+               of the function's purpose, the function's parameters and the function's return
+               value.
+               </p>
+               <p>
+               The output from your program looks like:
+               </p>
+               <table width="45%">
+               <tbody><tr>
+               <td>
+               <pre class="result"> Grocery Store Inventory
+ =======================
+ Barcode  :  6300090801
+ Price    :  3.25
+ Quantity :  5
+ Barcode  :  6380613916
+ Price    :  4.45
+ Quantity :  15
+ Barcode  :  6038367157
+ Price    :  3.95
+ Quantity :  10
+ Barcode  :  0
+
+             Goods in Stock
+             ==============
+ Barcode    Price   Quantity   Value&nbsp;
+ -----------------------------------
+ 6300090801  3.25          5   16.25
+ 6380613916  4.45         15   66.75
+ 6038367157  3.95         10   39.50
+                              ------
+ Total value goods in stock   122.50</pre></td></tr></tbody></table>
+               <br>
+
+               <p class="section">Books in Stock</p>
+               <p>
+               Design and code a program that lists the books
+               in stock in a local bookstore and calculates their
+               total value.&nbsp; Your program prompts the user for
+               and accepts each book's
+               </p>
+               <ul>
+               <li>ISBN</li>
+               <li>price</li>
+               <li>quantity in stock </li>
+               </ul>
+               <p>
+               Your program stops accepting data when the user enters 0 for the
+               ISBN.
+               </p>
+               <p>
+               Your program uses arrays, includes functions to validate
+               the input and calculates the total value of the books in stock.&nbsp;
+               You may assume that there are no more than 100 titles to process, but
+               write your code so that you can change this limit by editing a single
+               statement.
+               </p>
+               <p>
+               Preface each function header with a comprehensive description
+               of the function's purpose, the function's parameters and the function's return
+               value.
+               </p>
+               <p>
+               The output from your program looks something like:
+               </p>
+               <table width="45%">
+               <tbody><tr>
+               <td>
+               <pre class="result"> BooksStore Inventory
+ ====================
+ ISBN     :  0619215216
+ Price    :  49.95
+ Quantity :  5
+ ISBN     :  0201533936
+ Price    :  89.95
+ Quantity :  10
+ ISBN     :  0534379648
+ Price    :  69.95
+ Quantity :  15
+ ISBN     :  0
+
+            Books in Stock
+            ==============
+ ISBN        Price   Quantity   Value
+ --------------------------------------
+ 0619215216  49.95          5    249.75
+ 0201533936  89.95         10    899.50&nbsp;
+ 0534379648  69.95         15   1049.25
+                                -------
+ Total value books in stock     2198.50</pre></td></tr></tbody></table>
+               <br>
+
+               <p class="section">Work in Progress (Difficult)</p>
+               <p>
+               Design and code a program that lists a company's work
+               in progress <i>in project order</i>.&nbsp;
+               Your program prompts the user for and accepts each project's
+               </p>
+               <ul>
+               <li>project number</li>
+               <li>hourly rate</li>
+               <li>hours worked</li>
+               </ul>
+               <p>
+               Your program stops accepting data when the user enters 0 for the
+               project number.
+               </p>
+               <p>
+               Your program uses arrays, includes functions to validate
+               the input and to sort the information by project number
+               and calculates the total work in progress.&nbsp;
+               You may assume that there are no more than 100 projects
+               to process, but write your code so that you can change
+               this limit by editing a single statement.
+               </p>
+               <p>
+               Preface each function header with a comprehensive description
+               of the function's purpose, the function's parameters and the function's return
+               value.
+               </p>
+               <p>
+               The output from your program looks like:
+               </p>
+               <table width="45%">
+               <tbody><tr>
+               <td>
+               <pre class="result"> Work in Progress
+ ================
+ Project     :  3289
+ Rate        :  120.00
+ Hours Spent :  35
+ Project     :  1259
+ Rate        :  100.00
+ Hours Spent :  25
+ Project     :  2231
+ Rate        :  93.50
+ Hours Spent :  75
+ Project     :  0
+
+            Work in Progess
+            ===============
+ Project   Rate  Hours      Value&nbsp;
+ --------------------------------
+ 1259    100.00     25    2500.00
+ 2231     93.50     75    7012.50
+ 3289    120.00     35    4200.00
+                         --------
+ Total Work in Progress  13712.50</pre></td></tr></tbody></table>
+               <br>
+
+               <p class="section">SUBMISSION</p>
+               <p>
+               Upload your solution according to your instructor's guidelines.&nbsp;
+               </p>
+               <br>
+               <br>
+               <br>
+               </td>
+            </tr>
+         </tbody></table>
+      </td>
+
+      <!-- Detail Menu -->
+      <td class="panel1" width="150" valign="top" rowspan="2">
+         <ul id="mennav">
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/welco.html">Welcome</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/content/index.html">Notes</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/workshops.a.js"></script><a class="active" href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/index.html">Workshops</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/workshop_1.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w1.html">Getting&nbsp;Started</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/workshop_2.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w2.html">Computations</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/workshop_3.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w3.html">Logic</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/workshop_4.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w4.html">Functions</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/workshop_5.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w5.html">Functions&nbsp;with&nbsp;Pointers</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/workshop_6.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w6.html">Library&nbsp;Functions</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/workshop_7.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w7.html">Arrays</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/workshop_8.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w8.html">Structures</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/workshop_9.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w9.html">Strings</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/workshop_10.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/w10.html">Files</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/assignments.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/assignments/index.html">Assignments</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/handouts/index.html">Handouts</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/practice/index.html">Practice</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/resources/index.html">Resources</a></li>
+         <!--<li><a href="../content/glossary.html">Glossary</a></li>-->
+         </ul>
+      </td>
+   </tr>
+
+   <!-- Content Area Footer -->
+   <tr height="20">
+      <td class="panel3" align="center">
+         <table class="panel2" width="95%">
+            <tbody><tr>
+               <td align="left">
+                  &nbsp;&nbsp;<a href="https://scs.senecac.on.ca/~ipc144/pages/workshops/w7_p.html" class="text3">
+                  <img src="./workshop7_files/Printer.gif" height="15" width="10" alt="Printer Friendly Version of this Page">&nbsp;print this page</a>&nbsp;&nbsp;
+               </td>
+               <td align="right">
+                  &nbsp;&nbsp;<a href="https://scs.senecac.on.ca/~ipc144/pages/workshops/w7.html#top" class="text3">Top&nbsp;
+                  <img src="./workshop7_files/ArrowToT.gif" height="15" width="15" alt="Go Back to the Top of this Page"></a>
+               </td>
+            </tr>
+         </tbody></table>
+      </td>
+   </tr>
+
+   <!-- Footer -->
+   <tr>
+      <!-- Left Panel -->
+      <td class="panel1" width="700" align="center">
+         <!-- Lateral Motion Control -->
+         <!--<table width="90%" align="center">
+            <tr>
+               <td width="50%" align="left">
+                  <a href="datat.html" class="text3">
+                  <img src="../images/ArrowToL.gif" height="15" width="15" class="panel1" alt="Previous Reading" />&nbsp;&nbsp;Previous: Primitive Data Types</a>
+               </td>
+               <td width="50%" align="right">
+                  <a href="modul.html" class="text3">Next: Modular Programs&nbsp;&nbsp;
+                  <img src="../images/ArrowToR.gif" height="15" width="15" class="panel1" alt="Next Reading" /></a>
+               </td>
+            </tr>
+         </table>-->
+         <br>
+         <br>
+         <!-- Alternate Navigation Links -->
+         <ul id="altnav" align="center">
+         <li><a href="https://scs.senecac.on.ca/">ICT</a></li>
+         <!--<li><a href="http://cs.senecac.on.ca/~bsd">BSD Home</a></li>-->
+         <li><a href="https://scs.senecac.on.ca/~ipc144/index.html">BRP270 Home</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/outline.js"></script><a href="https://secure.senecac.on.ca/ssos/findWithoutSemester/ipc144/SICT">Outline</a></li>
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/timeline.html">Timeline&nbsp;</a></li>
+         </ul>
+         <ul id="altnav" align="center">
+         <li><a href="https://scs.senecac.on.ca/~ipc144/pages/content/index.html">Notes</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/classroom_a.js"></script></li>
+         <li><script type="text/javascript" src="./workshop7_files/classroom_b.js"></script></li>
+         <li><script type="text/javascript" src="./workshop7_files/workshops.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/workshops/index.html">Workshops</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/assignments.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/assignments/index.html">Assignments</a></li>
+         <li><script type="text/javascript" src="./workshop7_files/instructors.js"></script><a href="https://scs.senecac.on.ca/~ipc144/dynamic/instructors/index.html">Instructors</a></li>
+         </ul>
+         <br>
+         <!-- Bottom Line -->
+         <table cellpadding="1" width="90%">
+            <tbody><tr>
+               <td width="33%" class="text3">
+                  &nbsp;&nbsp;Designed by Chris Szalwinski&nbsp;&nbsp;
+               </td>
+               <td width="34%" align="center">
+                  <a href="https://scs.senecac.on.ca/~ipc144/pages/copyright.html" class="text3">Copying From This Site</a>
+               </td>
+               <td width="33%" align="right" class="text3">
+                  <script language="javascript">
+                  var lm = document.lastModified.slice(0,-3);
+                  document.write("Last Modified: " +lm)
+                  </script>Last Modified: 09/09/2015 12:39&nbsp;&nbsp;
+               </td>
+            </tr>
+         </tbody></table>
+      </td>
+
+      <!-- Logo - Right Bottom Corner -->
+      <td class="panel2" width="150" align="center">
+         <img src="./workshop7_files/Logo.gif" height="73" width="85"><br><a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/"><img alt="Creative Commons License" style="border-width:0" src="./workshop7_files/88x31.png"></a>
+      </td>
+   </tr>
+</tbody></table>
+
+
+</body><div id="deluminate_fullscreen_workaround" style="height: 2921px; width: 1903px; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(155, 153, 153);"></div></html>
